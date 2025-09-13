@@ -14,13 +14,13 @@ def output_to_file(output, filename):
 
 def construct_same_session_test_sets(base_path, runs_folder, test_session,
                                      pointcloud_fols, filename, output_name,
-                                     query_ratio=0.4):
+                                     query_ratio=1.0):
     """
     在同一个session内构建数据库集和查询集进行测试
 
     Args:
         test_session: 测试用的session号（如'100'）
-        query_ratio: 查询集占总数据的比例（默认0.4，即40%作为查询，100%作为数据库）
+        query_ratio: 查询集占总数据的比例（默认1.0，即40%作为查询，100%作为数据库）
     """
 
     print(f"Testing within session {test_session}")
@@ -201,7 +201,7 @@ if __name__ == "__main__":
 
     # 测试参数
     TEST_SESSION = "100"  # 使用session 100进行测试
-    QUERY_RATIO = 0.4  # 40%的文件作为查询
+    QUERY_RATIO = 1.0  # 40%的文件作为查询
     pointcloud_fols = "/pointcloud_20m_10overlap/"
 
     print(f"\n=== Same Session Test Setup ===")
